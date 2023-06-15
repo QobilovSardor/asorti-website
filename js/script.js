@@ -194,7 +194,7 @@ $(function () {
 	});
 
 	try {
-		const swiper = new Swiper('.mySwiper3', {
+		let swiper = new Swiper('.mySwiper3', {
 			loop: true,
 			slidesPerView: 1,
 			pagination: {
@@ -204,6 +204,20 @@ $(function () {
 	} catch (error) {
 
 	}
+	let swiper5 = new Swiper('.mySwiper4', {
+		loop: true,
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+		},
+	});
+	let swiper6 = new Swiper('.mySwiper5', {
+		loop: true,
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+		},
+	});
 
 	$('.footer-menu-block').slideUp();
 	$('.footer-logo__btn').on('click', function() {
