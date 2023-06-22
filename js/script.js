@@ -61,10 +61,41 @@ $(function () {
 		},
 	});
 
-	// main-slide
+	var swiper9 = new Swiper(".collapsed-slide", {
+		slidesPerView: 2,
+		spaceBetween: 50,
+		loop: true,
+		speed: 1000,
+
+		navigation: {
+			nextEl: ".swiper-button-next3",
+			prevEl: ".swiper-button-prev3",
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+			},
+			768: {
+				slidesPerView: 2,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+			},
+			1024: {
+				slidesPerView: 2.3,
+			},
+		},
+	});
+
+	// index.html main-slide
 	var mainSwiper = new Swiper(".main-slide", {
 		slidesPerView: 1,
-		spaceBetween: 0,
+		spaceBetween: 20,
 		loop: false,
 		speed: 1000,
 		pagination: {
@@ -72,16 +103,15 @@ $(function () {
 			clickable: true,
 		},
 	});
-	var mainSwiper = new Swiper(".mySwiper3", {
+	
+	var mainSwiper12 = new Swiper(".media-slider", {
 		slidesPerView: 1,
-		spaceBetween: 0,
-		speed: 1000,
+		spaceBetween: 20,
 		pagination: {
 			el: ".swiper-pagination",
 			clickable: true,
 		},
 	});
-
 	var pagingSwiper = new Swiper(".main-slide", {
 		pagination: {
 			el: ".swiper-pagination2",
@@ -99,9 +129,185 @@ $(function () {
 			}
 		},
 	});
-
 	mainSwiper.controller.control = pagingSwiper
 
+	// modal
+	$('.menu-in').each(function (idx, el) {
+		let openBtn = el.querySelector('p')
+		let box = el.querySelector('.menu-links');
+		$(openBtn).on('click', function() {
+			$(box).toggleClass('active');
+		})
+	})
+
+	// index.html end-slide
+	var mainSwiperEnd = new Swiper(".end-slide", {
+		slidesPerView: 1,
+		spaceBetween: 50,
+		loop: false,
+		speed: 1000,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: 1,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+			},
+			1024: {
+				slidesPerView: 1,
+			},
+		},
+	});
+	var pagingSwiperEnd = new Swiper(".end-slide", {
+		pagination: {
+			el: ".swiper-paginationEnd2",
+			type: "fraction",
+			formatFractionCurrent: function (number) {
+				return ('0' + number).slice(-2);
+			},
+			formatFractionTotal: function (number) {
+				return ('0' + number).slice(-2);
+			},
+			renderFraction: function (current, total) {
+				return '<span class="' + current + '"></span>' +
+					'<p>  </p>' +
+					'<span class="' + total + '"></span>';
+			}
+		},
+	});
+	mainSwiperEnd.controller.control = pagingSwiperEnd
+
+
+
+	// news.html news-slide
+	var mainSwiperNews = new Swiper(".news-slide", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		loop: false,
+		speed: 1000,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: 1,
+
+			},
+			1024: {
+				slidesPerView: 1,
+			},
+		},
+	});
+	var pagingSwiperNews = new Swiper(".news-slide", {
+		pagination: {
+			el: ".swiper-pagination2",
+			type: "fraction",
+			formatFractionCurrent: function (number) {
+				return ('0' + number).slice(-2);
+			},
+			formatFractionTotal: function (number) {
+				return ('0' + number).slice(-2);
+			},
+			renderFraction: function (current, total) {
+				return '<span class="' + current + '"></span>' +
+					'<p>  </p>' +
+					'<span class="' + total + '"></span>';
+			}
+		},
+	});
+	mainSwiperNews.controller.control = pagingSwiperNews
+
+
+
+	// index.html information mobile slayder
+	var mainSwiper2 = new Swiper(".mySwiper3", {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 1000,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+	});
+
+
+	var swiper = new Swiper('.mySwiper', {
+		speed: 1000,
+		slidesPerView: 7,
+		spaceBetween: 70,
+		loop: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: 3,
+				spaceBetween: 34,
+			},
+			480: {
+				slidesPerView: 7,
+				spaceBetween: 70,
+			}
+		}
+	});
+
+
+	var swiper5 = new Swiper('.mySwiper4', {
+		loop: true,
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+	});
+
+	var swiper6 = new Swiper('.mySwiper5', {
+		loop: true,
+		spaceBetween: 10,
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+	});
+
+	var aboutWorkSlide = new Swiper('.about-work-slide', {
+		loop: true,
+		spaceBetween: 90,
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+	});
+
+
+	var aboutWorkSlider = new Swiper('.history-slider-swiper', {
+		loop: true,
+		spaceBetween: 0,
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+	});
 
 	// input type file
 	$("#FileInput").on('change', function (e) {
@@ -171,57 +377,16 @@ $(function () {
 		})
 	});
 
-
-	var swiper = new Swiper('.mySwiper', {
-		speed: 1000,
-		slidesPerView: 7,
-		spaceBetween: 70,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		breakpoints: {
-			320: {
-				slidesPerView: 3,
-				spaceBetween: 34,
-			},
-			480: {
-				slidesPerView: 7,
-				spaceBetween: 70,
-			}
-		}
+	$('.footer-logo__btn').on('click', function () {
+		$('.footer-menu-block').toggleClass('active');
 	});
 
-	try {
-		let swiper = new Swiper('.mySwiper3', {
-			loop: true,
-			slidesPerView: 1,
-			pagination: {
-				el: '.swiper-pagination',
-			},
-		});
-	} catch (error) {
-
-	}
-	let swiper5 = new Swiper('.mySwiper4', {
-		loop: true,
-		slidesPerView: 1,
-		pagination: {
-			el: '.swiper-pagination',
-		},
-	});
-	let swiper6 = new Swiper('.mySwiper5', {
-		loop: true,
-		slidesPerView: 1,
-		pagination: {
-			el: '.swiper-pagination',
-		},
+	$('.media-hide-text').slideUp();
+	$('.media-show-more-btn').on('click', function () {
+		$('.media-hide-text').slideToggle();
+		$('.first-text').toggleClass('hide-shadow')
 	});
 
-	$('.footer-menu-block').slideUp();
-	$('.footer-logo__btn').on('click', function() {
-		$('.footer-menu-block').slideToggle();
-	});
+
 });
 
